@@ -1,0 +1,13 @@
+*.iml
+.gradle
+.idea/**/*.xml
+.idea/**/*.iml
+.idea/caches/
+.idea/libraries/
+/local.properties
+.DS_Store
+/build
+/captures
+.externalNativeBuild
+
+!.idea/codeStyles/codeStyleConfig.xml

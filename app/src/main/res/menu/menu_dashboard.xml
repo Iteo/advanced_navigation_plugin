@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/list_nav_graph"
+          android:title="First"
+          android:icon="@drawable/ic_android"/>
+    <item android:id="@+id/notifications_nav_graph"
+          android:title="Second"
+          android:icon="@drawable/ic_money"/>
+    <item android:id="@+id/filtered_list_nav_graph"
+          android:title="Third"
+          android:icon="@drawable/ic_airplane"/>
+</menu>

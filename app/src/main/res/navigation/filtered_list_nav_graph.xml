@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/filtered_list_nav_graph"
+    app:startDestination="@id/filteredListFragment">
+
+    <fragment android:id="@+id/filteredListFragment"
+              android:name="com.iteo.android_navigation.filterablelist.FilterableListFragment"
+              android:label="ListFragment"
+              tools:layout="@layout/fragment_list">
+        <action android:id="@+id/openFilters"
+                app:destination="@id/filters_nav_graph">
+            <argument android:name="initialColor" android:defaultValue="-1" app:argType="integer" />
+        </action>
+    </fragment>
+
+    <navigation android:id="@+id/filters_nav_graph"
+                app:startDestination="@id/listFiltersFragment">
+        <fragment
+            android:id="@+id/listFiltersFragment"
+            android:name="com.iteo.android_navigation.filterablelist.ListFiltersFragment"
+            android:label="ListFiltersFragment"
+            tools:layout="@layout/fragment_filters">
+            <argument android:name="initialColor" android:defaultValue="-1" app:argType="integer" />
+            <action android:id="@+id/openColorSelector"
+                    app:destination="@id/colorSelectFragment" />
+        </fragment>
+
+        <fragment
+            android:id="@+id/colorSelectFragment"
+            android:name="com.iteo.android_navigation.filterablelist.ColorSelectFragment"
+            android:label="ColorSelectFragment"
+            tools:layout="@layout/fragment_color_filters" />
+    </navigation>
+</navigation>
