@@ -1,5 +1,6 @@
 *.iml
 .gradle
+.idea
 .idea/**/*.xml
 .idea/**/*.iml
 .idea/caches/

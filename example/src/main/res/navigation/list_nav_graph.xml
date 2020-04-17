@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/list_nav_graph"
+    app:startDestination="@id/listFragment">
+
+    <fragment android:id="@+id/listFragment"
+              android:name="com.iteo.android_navigation.list.ListFragment"
+              android:label="ListFragment"
+              tools:layout="@layout/fragment_list">
+        <action android:id="@+id/openFilters"
+                app:destination="@id/itemsFilterDialog" />
+        <action android:id="@+id/openDetails"
+                app:destination="@id/detailsFragment" />
+    </fragment>
+
+    <dialog android:id="@+id/itemsFilterDialog"
+            android:name="com.iteo.android_navigation.list.ItemsFilterDialog"
+            android:label="ItemsFilterDialog"
+            tools:layout="@layout/dialog_filters">
+
+        <argument android:name="currentColor"
+                  android:defaultValue="-1"
+                  app:argType="integer" />
+    </dialog>
+
+    <fragment android:id="@+id/detailsFragment"
+              android:name="com.iteo.android_navigation.item_details.ItemDetailsFragment"
+              android:label="DetailsFragment"
+              tools:layout="@layout/fragment_item_details">
+
+        <argument android:name="itemId"
+                  app:argType="integer" />
+
+        <deepLink android:id="@+id/deepLink" app:uri="www.example.com/item/{itemId}" />
+    </fragment>
+
+    <action android:id="@+id/openDetails"
+            app:destination="@id/detailsFragment">
+        <argument android:name="itemId"
+                  app:argType="integer" />
+    </action>
+</navigation>
