@@ -8,7 +8,7 @@ Add the following dependency to your `build.gradle` file:
 
 ```
 dependencies {
-    implementation 'com.iteo.advanced_navigation_plugin:core:0.0.1'
+    implementation 'com.iteo.android_navigation:core:0.0.1'
 }
 ```
 
